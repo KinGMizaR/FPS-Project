@@ -7,12 +7,6 @@ public class player : MonoBehaviour
     public float speed = 0.1f;
     public  CameraControl rt;
 
-    void Start()
-    {
-       
-          }
-
-
     void Update()
     {
         Input Myinput = new Input();
@@ -21,8 +15,6 @@ public class player : MonoBehaviour
         bool sKey = Input.GetKey(KeyCode.S);
         bool aKey = Input.GetKey(KeyCode.A);
         bool dKey = Input.GetKey(KeyCode.D);
-
-
 
         if (wKey)
         {

@@ -8,12 +8,8 @@ public class CameraControl : MonoBehaviour
     public float mouseY;
     public bool Mouse;
     public float speed = 5;
-    private void Start()
-    {
-        transform.eulerAngles = new Vector3(0, 180, 0);
-
-    }
-
+     
+ 
     void Update()
     {
         mouseX += Input.GetAxis("Mouse X");
