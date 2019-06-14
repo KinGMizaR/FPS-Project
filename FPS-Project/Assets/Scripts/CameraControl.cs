@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    float mouseX;
-    float mouseY;
+    public float mouseX;
+    public float mouseY;
     public bool Mouse;
     public float speed = 5;
-
+    public float rotation = 0;
     private void Start()
     {
         transform.eulerAngles = new Vector3(0, 180, 0);
@@ -31,4 +31,6 @@ public class CameraControl : MonoBehaviour
         Debug.Log(mouseX);
         transform.eulerAngles = new Vector3(mouseY*speed, mouseX*speed, 0);
     }
+        
+      
 }

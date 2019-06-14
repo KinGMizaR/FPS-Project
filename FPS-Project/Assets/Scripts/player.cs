@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    Vector3 pos;
+    public float speed = 0.1f;
+    public  CameraControl rt;
 
     void Start()
     {
        
-        
-            pos = transform.position;
-    }
+          }
 
-    
+
     void Update()
     {
         Input Myinput = new Input();
 
         bool wKey = Input.GetKey(KeyCode.W);
-
         bool sKey = Input.GetKey(KeyCode.S);
         bool aKey = Input.GetKey(KeyCode.A);
         bool dKey = Input.GetKey(KeyCode.D);
@@ -28,20 +26,27 @@ public class player : MonoBehaviour
 
         if (wKey)
         {
-            pos.z += 0.1f;
+            transform.position += transform.forward * speed;
         }
         if (sKey)
         {
-            pos.z -= 0.1f;
-        }
-        if (aKey)
-        {
-            pos.x -= 0.1f;
+            transform.position -= transform.forward * speed;
+
         }
         if (dKey)
         {
-            pos.x += 0.1f;
+            transform.position += transform.right * speed;
+
         }
-        gameObject.transform.position = pos;
+        if (aKey)
+        {
+            transform.position -= transform.right * speed;
+
+        }
+
+
+        transform.eulerAngles = new Vector3(0, rt.mouseX * rt.speed, 0);
     }
+
+    
 }
