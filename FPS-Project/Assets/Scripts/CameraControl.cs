@@ -7,6 +7,7 @@ public class CameraControl : MonoBehaviour
     float mouseX;
     float mouseY;
     public bool Mouse;
+    public float speed = 5;
 
     private void Start()
     {
@@ -28,6 +29,6 @@ public class CameraControl : MonoBehaviour
 
         }
         Debug.Log(mouseX);
-        transform.eulerAngles = new Vector3(mouseY, mouseX, 0);
+        transform.eulerAngles = new Vector3(mouseY*speed, mouseX*speed, 0);
     }
 }
