@@ -8,7 +8,6 @@ public class CameraControl : MonoBehaviour
     public float mouseY;
     public bool Mouse;
     public float speed = 5;
-    public float rotation = 0;
     private void Start()
     {
         transform.eulerAngles = new Vector3(0, 180, 0);
