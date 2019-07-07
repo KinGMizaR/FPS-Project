@@ -9,13 +9,15 @@ public class player : MonoBehaviour
 
     void Update()
     {
-        Input Myinput = new Input();
 
+        //Aqui se asignan las letras WASD al movimiento del personaje
+        Input Myinput = new Input();
         bool wKey = Input.GetKey(KeyCode.W);
         bool sKey = Input.GetKey(KeyCode.S);
         bool aKey = Input.GetKey(KeyCode.A);
         bool dKey = Input.GetKey(KeyCode.D);
 
+        //Aqui condicionamos la velocidad de movimiento del personaje para cada eje
         if (wKey)
         {
             transform.position += transform.forward * speed;
@@ -36,7 +38,7 @@ public class player : MonoBehaviour
 
         }
 
-
+        //Aqui vinculamos el eje Y del personaje con el eje X de la camara para que el personaje rote segun la posicion en X de la camara
         transform.eulerAngles = new Vector3(0, rt.mouseX * rt.speed, 0);
     }
 
